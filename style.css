@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+/* setting css custom variables */
+:root {
+  /* neutral-colors */
+  --very-light-grey: hsl(0, 0%, 96%);
+  --grayish-blue: hsl(240, 3%, 59%);
+  --very-dark-blue: hsl(233, 11%, 29%);
+  /* primary-colors */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: var(--very-light-grey);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1320px;
+}
+
+/* styling introduction section */
+.introduction {
+  max-width: 425px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.introduction p:nth-child(1),
+p:nth-child(2) {
+  color: var(--very-dark-blue);
+}
+
+.introduction p:nth-child(1) {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.introduction p:nth-child(2) {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.introduction p:nth-child(3) {
+  color: var(--grayish-blue);
+  padding-top: 10px;
+  font-size: 13px;
+}
+
+/* styling card_box section */
+.card_box {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 450px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, minmax(195px, min-content));
+  grid-gap: 2rem;
+}
+
+.box {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  /* offset-x | offset-y | blur-radius | color */
+  box-shadow: 0 10px 5px rgb(218, 213, 213);
+  transition: transform 0.8s ease-in-out;
+}
+
+.box:hover {
+  transform: rotateY(360deg);
+}
+
+.box p:nth-child(1) {
+  font-weight: bold;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.box p:nth-child(2) {
+  color: var(--grayish-blue);
+  font-size: 13px;
+  padding-top: 7px;
+  padding-left: 15px;
+}
+
+.box img {
+  display: block;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  width: 50px;
+}
+
+.box-1 {
+  border-top: 4px solid var(--cyan);
+}
+
+.box-2 {
+  border-top: 4px solid var(--red);
+}
+
+.box-3 {
+  border-top: 4px solid var(--orange);
+}
+
+.box-4 {
+  border-top: 4px solid var(--blue);
+}
+
+/* styling footer */
+.attribution {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.attribution p:nth-child(1) {
+  padding-right: 1rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+
+/* setting style to screen sizes above 935 pixels */
+@media only screen and (min-width: 935px) {
+  /* changing some styles of introduction section */
+  .introduction p:nth-child(1) {
+    font-size: 30px;
+  }
+
+  .introduction p:nth-child(2) {
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .introduction p:nth-child(3) {
+    padding-top: 10px;
+    font-size: 13px;
+  }
+
+  /* changing some styles of card_box section */
+  .card_box {
+    max-width: 1000px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, minmax(195px, min-content));
+  }
+
+  .box {
+    /* offset-x | offset-y | blur-radius | color */
+    box-shadow: -7px 10px 5px rgb(218, 213, 213);
+  }
+
+  .box-3 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .box-1,
+  .box-4 {
+    transform: translateY(6rem);
+  }
+}
